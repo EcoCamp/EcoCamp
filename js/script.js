@@ -1,6 +1,7 @@
 class BlackBoard {
     constructor(){
         this.listaNomes=[];
+        this.nome;
     }
 
     gerarRA(){ 
@@ -12,9 +13,38 @@ class BlackBoard {
     return ra
     }
 
+    pegarNome(i){
+
+        this.nome=document.getElementById("nomeCaminho").innerText = this.listaNomes[i];
+        this.salvar()
+        window.location.href="atividades.html"
+    }
+
+    salvar(){
+        localStorage.clear();
+        let nomeSave = JSON.stringify(this.nome);
+
+        if (this.nome != null || this.nome != undefined) {
+            localStorage.setItem("nomeSave", nomeSave);
+        }
+
+    }
+
+    carregar(){
+        if(document.getElementById("nomeCaminho")){
+        let nomeSave = JSON.parse(localStorage.getItem("nomeSave"));              
+            if(nomeSave != null && nomeSave != "") {
+                this.nome = nomeSave;
+                document.getElementById("nomeCaminho").innerHTML = nomeSave;
+            }      
+        }
+    } 
+
     criarTabela(){
+        this.carregar()
+        if(document.getElementById("tabela")){
         document.getElementById('tabela').innerHTML += `
-        <div class="linha ativo">
+        <div class="linha-principal ativo">
         <p>Nº</p>
         <p></p>
         <p>Nome</p>
@@ -35,7 +65,7 @@ class BlackBoard {
             document.getElementById('tabela').innerHTML += `<div class="linha"> 
             <p>${i+1}</p> 
             <p class="tracin">-</p>
-            <p>${this.listaNomes[i]}</p>
+            <p onclick="blackBoard.pegarNome(${i})" class="cursor-pointer">${this.listaNomes[i]}</p>
             <p class="tracin">-</p>
             <p>${blackBoard.gerarRA()}</p>
             <p class="tracin">-</p>
@@ -51,6 +81,7 @@ class BlackBoard {
             </div>`;
         }
     }
+}
 
 
 
@@ -61,3 +92,4 @@ let blackBoard = new BlackBoard;
 blackBoard.listaNomes = ["Ana Júlia Marcílio do Amaral","Bruno de Almeida Santos","Charlie brown Junior","Diogo de Avilar Farias","Eduardo Conceição da Silva","Felipe Massa","George Lucas","Helena Sanches Junior", "Ivete Sem Galo", "Juliana Couto Paes", "Keanu Charles Reeves","Leonardo DiCaprio","Michael Jordan","Natalie Portman","Oswaldo Gonçalves Cruz","Peter Robert Jackson","Quentin Tarantino","Robert Downey Jr.","Steve Jobs","Tom Hanks","Usain Bolt","Vincent van Gogh", "Will Smith","Xuxa Meneghel"];
 
 blackBoard.criarTabela();
+blackBoard.carregar();
