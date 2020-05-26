@@ -134,7 +134,7 @@ grid-template-columns: 280px auto;
 font-size: 18px;
 }
 
-#caminho-tab a,#caminho-tab span{
+#caminho-tab a,#caminho-tab span .setinha{
 color: rgba(0, 0, 0, 0.6);
 text-decoration: none;
 font-weight: bold;
