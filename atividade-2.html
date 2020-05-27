@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoCamp Edu - Alunos</title>
+    <title>EcoCamp Edu - Atividades</title>
     <link rel="shortcut icon" href="img/favicon.png" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -23,11 +23,11 @@
 
         <hr>
 
-        <a href="#" class="ativo">Alunos</a>
+        <a href="alunos-1.html">Alunos</a>
 
         <hr>
 
-        <a href="atividades.html">Atividades</a>
+        <a href="atividades.html" class="ativo" style="cursor: pointer;">Atividades</a>
 
         <hr>
 
@@ -38,8 +38,8 @@
         <div>
             <img src="img/logoblack.png" id="logoblack">
             <div id="caminho">
-                <a href="home.html">Minhas Salas</a> <span class="setinha">></span> <a href="#" class="ativo"> Alunos - 4<span
-                        class="letrinha">o</span>Ano B</a> <p style="display: none;" id="nomeCaminho"></p>
+                <a href="home.html">Minhas Salas</a> <span class="setinha">></span> <a href="alunos-1.html"> Alunos - 4<span
+                        class="letrinha">o</span>Ano B</a> <span class="setinha">></span> <a href="atividades.html">Atividades</a> <span class="setinha">></span> <p class="ativo">Atividade 2</p> <p style="display: none;" class="ativo" id="nomeCaminho">Cheiro d Pneu queimado<p>
             </div>
         </div>
     </div>
@@ -47,7 +47,11 @@
     <div id="cntd-pri">
         <div></div>
 
-        <div class="tabela" style="margin-top:20px;" id="tabela">
+        <div class="exemplo-atividade center-h">
+            <div id="acesso-ativ">
+            <p id="textoAcesso">Deseja liberar o acesso dos alunos à atividade 2 ?</p>
+            <button id="btn-acesso" class="btn-acesso-liberar" onclick="blackBoard.acesso()"><p>Liberar</p></button>
+            </div>
 
         </div>
 
