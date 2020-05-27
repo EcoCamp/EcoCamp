@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<body>
+<body style="overflow: hidden;">
     <div id="profile-tab">
 
         <img src="img/user.png" id="profile-pic" ondragstart="return false">
@@ -48,14 +48,43 @@
 
         <div style="margin: 20px;">
 
-            <a href="alunos-1.html"><button class="btn-sala" id="btn-sala-1">4º Ano B <br> Matutino</button></a>
+            <a href="alunos-1.html"><button class="btn-sala" id="btn-sala-1" >4º Ano B <br> Matutino</button></a>
             <a href="#"><button class="btn-sala" id="btn-sala-2">6º Ano A <br> Vespertino</button></a>
 
+            <div class="sala-info-tab" id="info-sala-1" >
+
+                <div class="info-tab-ctn">
+                <p><span class="ativo">Sala:</span> 4º Ano B </p>
+                <p><span class="ativo">Período:</span> Matutino </p>
+                <p><span class="ativo">Número de Alunos:</span> 24 </p>
+                <br>
+
+                <p class="ativo">Horários</p>
+                <p>Terça : 08:30 às 09:15</p>
+                <p>Sexta : 11:50 às 12:35</p>
+                </div>
+
+            </div>
+
+            <div class="sala-info-tab" id="info-sala-2" >
+
+                <div class="info-tab-ctn">
+                <p><span class="ativo">Sala:</span> 6º Ano A </p>
+                <p><span class="ativo">Período:</span> Vespertino </p>
+                <p><span class="ativo">Número de Alunos:</span> 24 </p>
+                <br>
+
+                <p class="ativo">Horários</p>
+                <p>Quarta : 13:50 às 14:40</p>
+                <p>Quinta : 16:40 às 17:30</p>
+                </div>
+
+            </div>
 
         </div>
 
     </div>
-
+    <script src="js/script.js"></script>
 </body>
 
 </html>

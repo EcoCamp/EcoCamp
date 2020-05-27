@@ -42,9 +42,29 @@ class BlackBoard {
     }
 
     enterSenha() {
-        document.getElementById('senha').addEventListener('keyup', e => { if (e.key == "Enter") { this.loginFake() } })
+        if (document.getElementById('senha')) {
+            document.getElementById('senha').addEventListener('keyup', e => { if (e.key == "Enter") { this.loginFake() } })
+        }
     }
 
+    hoverBtnSala() {
+        if (document.getElementById('btn-sala-1')) {
+            document.getElementById('btn-sala-1').addEventListener('mouseenter', e => {
+                document.getElementById("info-sala-1").style.right = "0px"
+            })
+            document.getElementById('btn-sala-1').addEventListener('mouseleave', e => {
+                document.getElementById("info-sala-1").style.right = "-320px"
+            })
+        }
+        if (document.getElementById('btn-sala-2')) {
+            document.getElementById('btn-sala-2').addEventListener('mouseenter', e => {
+                document.getElementById("info-sala-2").style.right = "0px"
+            })
+            document.getElementById('btn-sala-2').addEventListener('mouseleave', e => {
+                document.getElementById("info-sala-2").style.right = "-320px"
+            })
+        }
+    }
 
     acesso() {
         var data = new Date();
@@ -198,3 +218,4 @@ blackBoard.listaNomes = ["Ana Júlia Marcílio do Amaral", "Bruno de Almeida San
 blackBoard.criarTabela();
 blackBoard.carregar();
 blackBoard.enterSenha()
+blackBoard.hoverBtnSala()

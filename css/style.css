@@ -58,7 +58,7 @@ transform: translateY(-50%);
   background-color: #F6F6F6;
   height: 100%;
   width: 600px;
-  z-index: 1;
+  z-index: 5;
   border-radius: 3px 0 0 3px;
 }
 
@@ -514,6 +514,57 @@ transition: all 0.3s;
 opacity: 0.5;
 }
 
+.sala-info-tab{
+font-size: 1.3em;
+background-color: #F6F6F6;
+position: absolute;
+top:43px;
+right: -320px;
+width: 300px;
+height: 100%;
+box-shadow: 15px 0 45px rgba(0, 0, 0, 0.25);
+z-index: -1;
+padding-top: 20px;
+padding-left: 20px;
+transition: all 1s;
+/*
+animation-name: right-slide;
+animation-duration: 1s;  
+animation-fill-mode: forwards;
+*/
+}
+
+.info-tab-ctn{
+width: max-content;
+position: absolute !important;
+left: 50% !important;
+transform: translateX(-50%) !important;
+}
+/*
+@keyframes right-slide {
+  from {right: -300px;}
+  to {right: 0;}
+}
+
+@keyframes right-slide-2{
+  from {right: 0px;}
+  to {right: -320px;}
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*INPUT RADIO*/
 .input-helper {
   position: relative;
@@ -563,3 +614,6 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked + label:before {
       background: #222;
   }
+
+
+
