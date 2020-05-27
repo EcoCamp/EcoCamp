@@ -3,11 +3,48 @@ class BlackBoard {
         this.listaNomes = [];
         this.nome;
         this.dataAcesso;
+        this.email = document.getElementById("email")
+        this.senha = document.getElementById("senha")
     }
 
     loginFake() {
-        document.getElementById("password").addEventListener('keyup', e => { if (e.key == "Enter") { window.location.href = "home.html" } })
+
+        if (this.email.value == "professores") {
+            document.getElementById("email-error").style.color = " chartreuse"
+            document.getElementById("email-error").innerText = "email válido"
+            document.getElementById("email").classList.remove("invalido-2")
+            setTimeout(function () { document.getElementById("email-error").style.color = "transparent"; }, 1800);
+
+        } else {
+            document.getElementById("email-error").style.display = "block";
+            document.getElementById("email-error").style.color = "rgb(241, 181, 15)"
+            document.getElementById("email-error").innerText = "email inválido"
+            document.getElementById("email").classList.add("invalido-2")
+        }
+
+        if (this.senha.value == "professores") {
+            document.getElementById("senha-error").style.color = " chartreuse"
+            document.getElementById("senha-error").innerText = "senha válida"
+            document.getElementById("senha").classList.remove("invalido-2")
+            setTimeout(function () { document.getElementById("senha-error").style.color = "transparent"; }, 1800);
+        } else {
+            document.getElementById("senha-error").style.display = "block";
+            document.getElementById("senha-error").style.color = "rgb(241, 181, 15)"
+            document.getElementById("senha-error").innerText = "senha inválida"
+            document.getElementById("senha").classList.add("invalido-2")
+        }
+
+        if (this.email.value == "professores" && this.senha.value == "professores") {
+            window.location.href = "home.html"
+        }
+
+
     }
+
+    enterSenha() {
+        document.getElementById('senha').addEventListener('keyup', e => { if (e.key == "Enter") { this.loginFake() } })
+    }
+
 
     acesso() {
         var data = new Date();
@@ -96,8 +133,8 @@ class BlackBoard {
             }
 
             //se existir o botão d atividade-1-pessoal
-            if(document.getElementById("btn-atv-1-pessoal")){
-                document.getElementById('btn-atv-2-pessoal').style.display ="block";
+            if (document.getElementById("btn-atv-1-pessoal")) {
+                document.getElementById('btn-atv-2-pessoal').style.display = "block";
             }
 
         }
@@ -160,3 +197,4 @@ blackBoard.listaNomes = ["Ana Júlia Marcílio do Amaral", "Bruno de Almeida San
 
 blackBoard.criarTabela();
 blackBoard.carregar();
+blackBoard.enterSenha()

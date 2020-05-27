@@ -17,12 +17,14 @@
             <h2>Login</h2>
 
             <p>email</p>
-            <input type="email" id="" placeholder="professores@professores.edu">
+            <p class="invalido" id="email-error">email inválido</p>
+            <input type="email" id="email" placeholder="professores@professores.edu" required>
 
             <p>senha</p>
-            <input onkeyup="blackBoard.loginFake()" type="password" id="password" placeholder="**************">
+            <p class="invalido" id="senha-error">senha inválida</p>
+            <input type="password" id="senha" placeholder="**************">
 
-            <div class="center-h"><a href="home.html"><button id="entrar">Entrar</button></a></div>
+            <div class="center-h"><a href="#"><button id="entrar" onclick="blackBoard.loginFake()">Entrar</button></a></div>
 
         </div>
     </div>
