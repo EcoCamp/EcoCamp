@@ -219,3 +219,12 @@ blackBoard.criarTabela();
 blackBoard.carregar();
 blackBoard.enterSenha()
 blackBoard.hoverBtnSala()
+
+function fecharLei(){
+document.getElementById("container-lei").style.opacity="0"
+setTimeout(function () { document.getElementById("container-lei").style.display="none" }, 401);
+}
+function abrirLei(){
+document.getElementById("container-lei").style.display="block"
+setTimeout(function () { document.getElementById("container-lei").style.opacity="1" }, 10);
+}
